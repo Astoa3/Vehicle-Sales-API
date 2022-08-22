@@ -1,0 +1,282 @@
+openapi: 3.0.0
+info:
+  version: '1'
+  title: Vehicle Sales
+  description: 'This API program will return inventory data for vehicles based on make,model, year, and color.'
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/AASTORGA_1/VehicleStore/1
+    
+paths:
+ /inventory:
+   get:
+    description: Get vehicle inventory data
+    parameters: 
+      - name: bodyLimit
+        in: query
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 5
+          example: 5
+         
+      - name: pageLimit
+        in: query
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 1
+          example: 1
+    responses:
+      200:
+       description: Successful
+       content:
+        application/json:
+         schema:
+          $ref: '#/components/schemas/inventories'
+      400:
+         description: Bad request
+      404:
+         description: Request not found
+ /inventory/{make}:
+  parameters:
+     - name: make
+       in: path
+       schema:
+        type: string
+       required: true
+  get:
+   description: Get Vehicle Make
+   parameters: 
+    - in: query
+      name: metadata
+      schema:
+        type: boolean
+      required: false
+      description: Return only if true.
+   responses:
+     200:
+      description: Successful
+      content:
+       application/json: 
+        schema:
+         type: object
+         properties:
+          make:
+            type: string
+          description:
+           type: string
+     400:
+         description: Bad request
+     404:
+         description: Request not found
+         
+ /inventory/{make}/{model}:
+  get:
+    description: Get Vehicle model
+    parameters:
+      - name: make
+        in: path
+        schema:
+          type: string
+        required: true
+        example: Ford
+      - name: model
+        in: path
+        schema:
+          type: string
+        required: true
+        example: Mustang GT
+    responses:
+      200:
+       description: Successful
+       content:
+          application/json:
+            schema:
+               $ref: '#/components/schemas/inventory'
+                  
+      400:
+         description: Bad request
+      404:
+         description: Request not found
+       
+ /inventory/{year}:
+   get:
+    description: Get Vehicle year
+    parameters:
+      - name: year
+        in: path
+        schema:
+          type: integer
+        required: true
+    responses:
+      200:
+        description: Successful
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                 description:
+                  type: string
+                 year:
+                  type: integer
+      
+      
+ /inventory/{color}:
+  get:
+    description: Get Vehicle color
+    parameters:
+      - name: color
+        in: path
+        schema:
+          type: string
+        required: true
+    responses:
+      200:
+        description: Successful
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                 description:
+                  type: string
+                 color:
+                  type: string
+      400:
+         description: Bad request
+      404:
+         description: Request not found
+   
+components:
+ schemas:
+  inventories:
+   description: array of inventory
+   type: array
+   items:
+    $ref: '#/components/schemas/inventory'
+    
+  inventory:
+   description: Inventory data model
+   properties:
+    Vehicle1:
+     properties:
+      make:
+       type: string
+       example: Chevrolet
+      model:
+       type: string
+       example: Impala
+      year:
+        type: integer
+        example: 2019
+      color:
+        type: string
+        example: Black
+      description:
+        type: string
+        example: Chevy Impala
+      price:
+         type: integer
+         example: 18000
+      mileage:
+         type: integer
+         example: 50000
+    Vehicle2:
+        properties:
+         make:
+          type: string
+          example: Chevrolet
+         model:
+          type: string
+          example: Corvette Stingray
+         year:
+          type: integer
+          example: 2020
+         description:
+          type: string
+          example: Chevy Corvette Stingray 2020
+         color:
+          type: string
+          example: Red
+         price:
+          type: integer
+          example: 70000
+         mileage:
+          type: integer
+          example: 10000 
+    Vehicle3:
+        properties:
+          make:
+            type: string
+            example: Ford
+          model:
+           type: string
+           example: Mustang GT
+          year:
+           type: integer
+           example: 2021
+          description:
+           type: string
+           example: Ford Mustang GT 2021
+          color:
+           type: string
+           example: Green
+          price:
+           type: integer
+           example: 25000
+          mileage:
+           type: integer
+           example: 30000   
+    Vehicle4:
+          properties:
+           make:
+            type: string
+            example: Acura
+           model:
+            type: string
+            example: TLX
+           year:
+            type: integer
+            example: 2022
+           description:
+            type: string
+            example: Acura TLX 2022
+           color:
+            type: string
+            example: White
+           price:
+            type: integer
+            example: 60000
+           mileage:
+            type: integer
+            example: 25000
+    Vehicle5:
+          properties:
+            make:
+             type: string
+             example: Kia
+            model:
+             type: string
+             example: Optima
+            year:
+             type: integer
+             example: 2018
+            description:
+             type: string
+             example: Kia Optima 2018
+            color:
+             type: string
+             example: Silver
+            price:
+             type: integer
+             example: 16000
+            mileage:
+             type: integer
+             example: 67000
