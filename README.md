@@ -43,7 +43,7 @@ This project will utilize:
     
     I have never played with building an API before though so it was interesting, my experience is mostly developing based on a created API like the ESRP.
     
-    http://192.168.157.12:9000/inesrp/queues/{queueId}/prrs <--- My tool would databind all the queues in a specefied url and list them on the front end. A user from here would click enable and in the backend a put request would enable associated queue's prr, such as Time of Day. 
+    http://192.168.157.12:9000/inesrp/queues/{queueId}/prrs <--- My PRR tool would data bind all the queues in a specefied url and list them on the front end. A user from here would click enable and in the backend a put request would enable associated queue's prr, such as Time of Day. 
     
  I have a decent understanding building an API contextually, but would benefit off a few quick questions to verify some things. While I didn't utilize much of the mySQL database, I did create it via CLI and manipulate it via python script in the backend for practice over the weekend. I felt pretty comfortable building the Docker container as well, this project has got me pretty comfortable with that as well. 
   
