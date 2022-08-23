@@ -27,22 +27,7 @@ This project will utilize:
   
   
   
-  Notes: I haven't created an API, before and was confused on the endpoints and how to get the data that wasn't example data.
-   http:APILink/inventory/{make}
-   
-   I had the properties set for
-   
-    make:
-    description:
-    
-    Typed in Chevrolet to try and bring up an array of objects that contained Chevrolet as the make value, but would get the type that I set. The queries would just bring up property data.
-    
-    make: string
-    description: string
-    
-    I have never played with building an API before though so it was interesting, my experience is mostly developing based on a created API like the ESRP.
-    
-    http://IP/inesrp/queues/{queueId}/prrs <--- My PRR tool would data bind all the queues in a specefied url and list them on the front end. A user from here would click enable and in the backend a put request would enable associated queue's prr, such as Time of Day. 
+  Notes: 
     
  I have a decent understanding building an API contextually, but would benefit off a few quick questions to verify some things. While I didn't utilize much of the mySQL database, I did create it via CLI and manipulate it via python script in the backend for practice over the weekend. I felt pretty comfortable building the Docker container as well, this project has got me pretty comfortable with that as well. 
   
