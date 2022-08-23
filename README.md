@@ -27,8 +27,7 @@ This project will utilize:
   
   
   
-  Notes: I haven't created an API, before and was confused on the endpoints and how to get the data that wasn't example data
-  Example:
+  Notes: I haven't created an API, before and was confused on the endpoints and how to get the data that wasn't example data.
    http:APILink/inventory/{make}
    
    I had the properties set for
