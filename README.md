@@ -10,7 +10,7 @@ This project will utilize:
   
   API: OpenAPI Specification (SwaggerHub)
   
-  Database: MySQL
+  Database: (Planned for MySQL, but was having issues with docker container)
   
   Front-end and back-end code.
   
@@ -18,9 +18,9 @@ This project will utilize:
   
   How to run:
   
-  1. Download the Docker file and unzip it in a directory within your host
-  2. Extract
-  3. Run CLI--> docker build --tag vehicle_sales .
+  1. Download the vehicle_inventory folder
+  2. Extract folder in a linux host
+  3. Run CLI--> docker build --tag vehicle_inventory .
   4. Run CLI--> docker compose up
   5. This is the front-end link, this will display information of the Vehicle Sales inventory data gathered from API requests
   https://NMYS5F4YHJIRNU3S.anvil.app/6BNNJQMATJS4MAQ4TO4HBECI
