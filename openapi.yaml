@@ -81,13 +81,11 @@ paths:
         schema:
           type: string
         required: true
-        example: Ford
       - name: model
         in: path
         schema:
           type: string
         required: true
-        example: Mustang GT
     responses:
       200:
        description: Successful
@@ -181,7 +179,7 @@ components:
         example: Black
       description:
         type: string
-        example: Chevy Impala
+        example: Chevy Impala 2019
       price:
          type: integer
          example: 18000
